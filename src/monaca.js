@@ -2616,7 +2616,8 @@
         const option = {
           cwd: dir,
           stdio: 'pipe',
-          env: process.env
+          env: process.env,
+          shell: true
         };
         npm = spawn(packageManager, command, option);
         npm.stdout.on('data', (data) => {
@@ -2921,7 +2922,8 @@
           npm = spawn(packageManager, ['run', command], {
             cwd: projectDir,
             stdio: 'pipe',
-            env: process.env
+            env: process.env,
+            shell: true
           });
 
           npm.stdout.on('data', (data) => {
@@ -2937,7 +2939,8 @@
           npm = spawn(packageManager, ['run', command], {
             cwd: projectDir,
             stdio: this.clientType === 'cli' ? 'inherit': 'pipe',
-            env: process.env
+            env: process.env,
+            shell: true
           });
         }
 
